@@ -33,7 +33,7 @@ const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
             handlePlay={handlePlayClick}
           />
         </div>
-        <img src={song.images?.coverart} alt="song_img" />
+        <img src={song.images?.coverart} alt={`Cover Art - ${song.title}`} />
       </div>
 
       {/* Displaying the Song Title and Artist */}
@@ -43,7 +43,7 @@ const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
         </p>
         <p className="text-sm text-gray-300 mt-1 truncate">
           <Link
-            to={`/songs/${
+            to={`${
               song?.artists
                 ? `/artists/${song?.artists[0]?.adamid}`
                 : `/top-artists`
