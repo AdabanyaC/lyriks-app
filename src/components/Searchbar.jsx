@@ -4,7 +4,7 @@ import { FiSearch } from "react-icons/fi";
 
 const Searchbar = () => (
   <form
-    autocomplete="off"
+    autoComplete="off"
     className="p-2 text-gray-400 focus-within:text-gray-600"
   >
     <label htmlFor="search-field" className="sr-only">

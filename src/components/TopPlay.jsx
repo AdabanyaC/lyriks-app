@@ -32,9 +32,9 @@ const TopChartCard = ({
         <Link to={`/songs/${song?.key}`}>
           <p className="text-xl font-bold text-white"> {song?.title} </p>
         </Link>
-        <Link to={`/artists/${song?.artists[0].adamid}`}>
+        {/* <Link to={`/artists/${song?.artists[0].adamid}`}>
           <p className="text-base text-gray-300 mt-1"> {song?.subtitle} </p>
-        </Link>
+        </Link> */}
       </div>
     </div>
     <PlayPause
@@ -57,7 +57,7 @@ const TopPlay = () => {
     divRef.current.scrollIntoView({ behavior: "smooth" });
   });
 
-  const topPlays = data?.slice(0, 5);
+  const topPlays = data?.slice(0, 5) ?? [];
 
   const handlePauseClick = () => {
     dispatch(playPause(false));
@@ -103,7 +103,7 @@ const TopPlay = () => {
           </div>
 
           {/* Swiper Component */}
-          <Swiper
+          {/* <Swiper
             slidesPerView={"auto"}
             spaceBetween={15}
             freeMode
@@ -118,7 +118,7 @@ const TopPlay = () => {
                 style={{ width: "25%", height: "auto" }}
                 className="shadow-lg rounded-full animate-slideright"
               >
-                <Link to={`/artists/${song?.artists[0].adamid}`}>
+                <Link to={`/artists/${song?.artists[0]?.adamid}`}>
                   <img
                     src={song?.images.background}
                     alt="Artist name"
@@ -127,7 +127,7 @@ const TopPlay = () => {
                 </Link>
               </SwiperSlide>
             ))}
-          </Swiper>
+          </Swiper> */}
         </div>
       </div>
     </div>
